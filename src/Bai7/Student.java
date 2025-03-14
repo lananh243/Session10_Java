@@ -19,7 +19,11 @@ public class Student {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name == null || name.isEmpty()) {
+            System.err.println("Tên ko đc để trống");
+        } else {
+            this.name = name;
+        }
     }
 
     public String getId() {
@@ -35,7 +39,11 @@ public class Student {
     }
 
     public void setGpa(double gpa) {
-        this.gpa = gpa;
+        if (gpa > 0) {
+            this.gpa = gpa;
+        } else {
+            System.err.println("GPA ko đc là số âm");
+        }
     }
 
     public String getDetails() {

@@ -15,7 +15,11 @@ public class GraduateStudent extends Student {
     }
 
     public void setResearchTopic(String researchTopic) {
-        this.researchTopic = researchTopic;
+        if (researchTopic == null || researchTopic.isEmpty()) {
+            System.err.println("Đề tài nghiên cứu ko đc để trống");
+        } else {
+            this.researchTopic = researchTopic;
+        }
     }
 
     public String getSupervisorName() {
